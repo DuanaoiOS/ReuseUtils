@@ -35,9 +35,8 @@ extension NibLoadable where Self: UIView {
     ///
     /// - Parameter nibName: Xib文件名 默认与类名一致
     /// - Returns: 返回加载的UI对象
-    static func loadFromNib(_ nibName: String? = nil) -> Self {
-        let nib = nibName ?? "\(self)"
-        return Bundle.main.loadNibNamed(nib, owner: nil, options: nil)?.first as! Self
+    static func loadFromNib() -> Self {
+        return Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)?.first as! Self
     }
 }
 
